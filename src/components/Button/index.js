@@ -35,25 +35,24 @@ function Button({
         _props.href = href;
         Comp = 'a';
     }
-
     const classes = cx('wrapper', {
-        [className] : className,
+        [className]: className,
         primary: primary,
         outline: outline,
         text: text,
         disaled: disaled,
         rounded,
         small: small,
-        large: large
+        large: large,
     });
-    
+
     //Remove event listener when btn is disabled
-    if(disaled){
-        Object.keys(_props).forEach((key)=>{
-            if(key.startsWith('on') && typeof _props[key]==='function'){
+    if (disaled) {
+        Object.keys(_props).forEach((key) => {
+            if (key.startsWith('on') && typeof _props[key] === 'function') {
                 delete _props[key];
             }
-        })
+        });
     }
 
     return (
